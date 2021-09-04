@@ -113,6 +113,7 @@ alias qpcp="rsync -avh --progress /mnt/local/raid/downloads/torrents/qbittorrent
 alias nmon="speedometer -r enp3s0f1 -t enp3s0f1 -s"
 alias ctdl="cd /mnt/local/raid/downloads/torrents/qbittorrent/completed/$1"
 alias cndl="cd /mnt/local/downloads/nzbs/nzbget/completed/$1"
+alias dprune="docker system prune -af --volumes"
 # cloudbox aliases
 alias cpu="screen -dmS "cloudplow" cloudplow upload"
 cloudbox() {

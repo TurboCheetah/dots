@@ -48,7 +48,7 @@ bspc config normal_border_color  "#121212"
 # some window rules
 bspc rule -a feh state=floating follow=on
 bspc rule -a mpv state=floating
-bspc rule -a spotify desktop='^7'
+bspc rule -a Spotify desktop='^7'
 bspc rule -a discord desktop='^8'
 bspc rule -a signal-desktop desktop='^8'
 bspc rule -a nextcloud desktop='^7' state=tiled
