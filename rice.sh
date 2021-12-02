@@ -10,6 +10,12 @@ then
 	(cd ~/.srcs/paru/ && makepkg -si )
 fi
 
+if ! command -v starfish &> /dev/null
+then
+    echo "It seems that you don't have the starfish prompt installed, I'll install that for you before continuing."
+	sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
+fi
+
 # install dependencies
 paru -S --noconfirm exa bspwm sxhkd picom-ibhagwan-git alacritty cava dunst htop neofetch neovim lf polybar rofi zsh python-pywal ttc-iosevka ttc-iosevka-curly otf-apple-sf-pro
 

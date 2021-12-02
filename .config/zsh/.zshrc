@@ -9,7 +9,6 @@ if ! zgen saved; then
 
   # specify plugins here
   zgen oh-my-zsh
-  zgen load denysdovhan/spaceship-zsh-theme spaceship
   zgen load zsh-users/zsh-completions
 
   plugins=(git zsh-autosuggestions zsh-syntax-highlighting common-aliases docker-compose extract gh sudo transfer screen)
@@ -21,15 +20,13 @@ if ! zgen saved; then
   zgen save
 fi
 
+eval "$(starship init zsh)"
 
 DISABLE_UPDATE_PROMPT=true
 # source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim
 unsetopt nomatch
-SPACESHIP_USER_SHOW=needed
-SPACESHIP_HOST_SHOW=false
-SPACESHIP_DIR_TRUNC_PREFIX="~/"
 alias update="sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean"
 alias yay="paru"
 alias rcp="rsync -avh --progress $1 $2"
