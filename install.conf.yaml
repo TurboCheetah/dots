@@ -16,4 +16,4 @@
     ~/.vimrc: .vimrc
     ~/.wallpapers: .wallpapers/**
     ~/.xinitrc: .xinitrc
-    ~/.zshenv: zsh/zshenv
+    ~/.zshenv: .zshenv
