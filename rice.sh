@@ -10,9 +10,9 @@ then
 	(cd ~/.srcs/paru/ && makepkg -si )
 fi
 
-if ! command -v starfish &> /dev/null
+if ! command -v starship &> /dev/null
 then
-    echo "It seems that you don't have the starfish prompt installed, I'll install that for you before continuing."
+    echo "It seems that you don't have the starship prompt installed, I'll install that for you before continuing."
 	sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 fi
 
