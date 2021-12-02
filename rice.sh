@@ -17,7 +17,7 @@ then
 fi
 
 # install dependencies
-paru -S --noconfirm exa bspwm sxhkd picom-ibhagwan-git alacritty cava dunst htop neofetch neovim lf polybar rofi zsh python-pywal ttc-iosevka ttc-iosevka-curly otf-apple-sf-pro
+paru -S --noconfirm exa fzf bspwm sxhkd picom-ibhagwan-git alacritty cava dunst htop neofetch neovim lf polybar rofi zsh python-pywal ttc-iosevka ttc-iosevka-curly otf-apple-sf-pro
 
 # install dots
 git clone https://github.com/TurboCheetah/dots.git ~/.dotfiles

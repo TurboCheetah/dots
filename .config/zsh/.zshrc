@@ -12,6 +12,7 @@ if ! zgen saved; then
   zgen load zsh-users/zsh-completions
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-syntax-highlighting
+  zgen load joshskidmore/zsh-fzf-history-search
 
   plugins=(git common-aliases docker-compose extract gh sudo transfer screen)
   for p in ${(@s' ')plugins}; do
