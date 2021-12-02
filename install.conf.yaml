@@ -14,10 +14,8 @@
     ~/.config: 
       glob: true
       path: .config/**
-    ~/.config/zsh:
-      glob: true
-      path: .config/zsh/**
-      prefix: '.'
+    ~/.config/zsh/.zshrc: .config/zsh/.zshrc
+    ~/.config/zsh/.zprofile: .config/zsh/.zprofile
     ~/.bin: 
       glob: true
       path: .bin/**
