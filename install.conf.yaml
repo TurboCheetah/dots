@@ -11,9 +11,15 @@
   - [~/.dotfiles/.config/zsh/setup.sh"]
 
 - link:
-    ~/.config: .config/**
-    ~/.bin: .bin/**
+    ~/.config: 
+      glob: true
+      path: .config/**
+    ~/.bin: 
+      glob: true
+      path: .bin/**
     ~/.vimrc: .vimrc
-    ~/.wallpapers: .wallpapers/**
+    ~/.wallpapers:
+      glob: true
+      path: .wallpapers/**
     ~/.xinitrc: .xinitrc
     ~/.zshenv: .zshenv
