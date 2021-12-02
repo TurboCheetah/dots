@@ -1,0 +1,20 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~']
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [chsh -s $(which zsh), Making zsh the default shell]
+
+- link:
+    ~/.dotfiles/.git/hooks/post-checkout: git/hooks/post-checkout
+    ~/.dotfiles/.git/hooks/post-commit: git/hooks/post-commit
+    ~/.dotfiles/.git/hooks/post-merge: git/hooks/post-merge
+    ~/.config: .config/**
+    ~/.bin: .bin/**
+    ~/.vimrc: .vimrc
+    ~/.xinitrc: .xinitrc
+    ~/.zshenv: zsh/zshenv

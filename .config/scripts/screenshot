@@ -1,0 +1,15 @@
+#!/bin/bash
+case $1 in
+	select)
+	  maim -u --select --bordersize=1 --color=255,255,255,255 /home/skarphet/img/ss/null/$(date +'%Y-%m-%d_%H.%M.%S').png
+	  if [ $? -eq 0 ]
+	  then
+	    dunstify --replace=666 --urgency=LOW " peynir!" "ekran görüntüsü alındı."
+	  fi
+	;;
+
+	full)
+	  maim -u /home/skarphet/img/ss/null/$(date +'%Y-%m-%d_%H.%M.%S').png
+	  dunstify --replace=666 --urgency=LOW " peynir!" "ekran görüntüsü alındı."
+	;;
+esac

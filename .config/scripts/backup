@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# ADD THIS TO YOUR CRONTAB
+# 0 * * * *	XAUTHORITY=/home/skarphet/.Xauthority DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /home/skarphet/code/sh/backup
+# 30 * * * *	XAUTHORITY=/home/skarphet/.Xauthority DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /home/skarphet/code/sh/backup
+
+__backup() {
+  # folders
+  # startup notification
+  #/usr/bin/dunstify --timeout=1500 --urgency=LOW -r 32122 "痢 dosyalar driva'a senkronize ediliyor"
+
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/code/sh" "GDrive:Yedekler/Arch-K55VD/code/sh"
+
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/code/pkg" "GDrive:Yedekler/Arch-K55VD/code/pkg"
+
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/doc" "GDrive:Yedekler/Arch-K55VD/doc"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/img" "GDrive:Yedekler/Arch-K55VD/img"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/book" "GDrive:Yedekler/Arch-K55VD/book"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/mp3" "GDrive:Yedekler/Arch-K55VD/mp3"
+  
+  # other files
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.bashrc" "GDrive:Yedekler/Arch-K55VD/others"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.bash_profile" "GDrive:Yedekler/Arch-K55VD/others"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.Xresources" "GDrive:Yedekler/Arch-K55VD/others"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.xinitrc" "GDrive:Yedekler/Arch-K55VD/others"
+  
+  # config files
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.config/bspwm" "GDrive:Yedekler/Arch-K55VD/config/bspwm"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.config/dunst" "GDrive:Yedekler/Arch-K55VD/config/dunst"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.config/feh" "GDrive:Yedekler/Arch-K55VD/config/feh"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.config/nvim" "GDrive:Yedekler/Arch-K55VD/config/nvim"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.config/zathura" "GDrive:Yedekler/Arch-K55VD/config/zathura"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.config/picom" "GDrive:Yedekler/Arch-K55VD/config/picom"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.config/polybar" "GDrive:Yedekler/Arch-K55VD/config/polybar"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.config/ranger" "GDrive:Yedekler/Arch-K55VD/config/ranger"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.config/rclone" "GDrive:Yedekler/Arch-K55VD/config/rclone"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.config/sxhkd" "GDrive:Yedekler/Arch-K55VD/config/sxhkd"
+  
+  rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s "/home/skarphet/.config/mpv" "GDrive:Yedekler/Arch-K55VD/config/mpv"
+  # backup finished notification 
+  #/usr/bin/dunstify --timeout=1500 --urgency=LOW -r 32122 " senkronizasyon başarılı"
+
+}
+
+NETWORK=`(iwgetid | sed 's/.*:"//g' | sed 's/"//g')`
+WIFI1="add your wifi"
+WIFI2="add another wifi"
+
+if [[ $NETWORK = $WIFI1 ]] || [[ $NETWORK = $WIFI2 ]]
+then
+	__backup
+else
+	echo "Connected Wi-Fi is not recognized."
+fi
+
