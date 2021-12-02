@@ -1,2 +1,3 @@
 [character]
 success_symbol = "[➜](bold green)"
+error_symbol = "[x](bold red)"
