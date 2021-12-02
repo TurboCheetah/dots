@@ -11,7 +11,7 @@ then
 fi
 
 # install dependencies
-paru -S --noconfirm bspwm sxhkd picom-ibhagwan-git alacritty cava dunst htop neofetch neovim polybar rofi zsh python-pywal
+paru -S --noconfirm exa bspwm sxhkd picom-ibhagwan-git alacritty cava dunst htop neofetch neovim polybar rofi zsh python-pywal
 
 # install dots
 git clone https://github.com/TurboCheetah/dots.git ~/.dotfiles
