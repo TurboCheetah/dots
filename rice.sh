@@ -3,7 +3,7 @@
 
 # install paru
 sudo pacman -S --needed base-devel
-if ! command -v $HELPER &> /dev/null
+if ! command -v paru &> /dev/null
 then
     echo "It seems that you don't have paru installed, I'll install that for you before continuing."
 	git clone https://aur.archlinux.org/paru.git ~/.srcs/paru
