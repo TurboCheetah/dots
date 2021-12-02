@@ -10,8 +10,10 @@ if ! zgen saved; then
   # specify plugins here
   zgen oh-my-zsh
   zgen load zsh-users/zsh-completions
+  zgen load zsh-users/zsh-autosuggestions
+  zgen load zsh-users/zsh-syntax-highlighting
 
-  plugins=(git zsh-autosuggestions zsh-syntax-highlighting common-aliases docker-compose extract gh sudo transfer screen)
+  plugins=(git common-aliases docker-compose extract gh sudo transfer screen)
   for p in ${(@s' ')plugins}; do
   	zgen oh-my-zsh plugins/$p
   done
