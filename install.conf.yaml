@@ -8,7 +8,7 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [~/.dotfiles/zsh/setup"]
+  - [~/.dotfiles/.config/zsh/setup"]
 
 - link:
     ~/.config: .config/**
