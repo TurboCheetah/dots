@@ -2,6 +2,7 @@
     link:
       relink: true
       create: true
+      force: true
 
 - clean: ['~']
 
@@ -10,9 +11,6 @@
   - [~/.dotfiles/zsh/setup"]
 
 - link:
-    ~/.dotfiles/.git/hooks/post-checkout: git/hooks/post-checkout
-    ~/.dotfiles/.git/hooks/post-commit: git/hooks/post-commit
-    ~/.dotfiles/.git/hooks/post-merge: git/hooks/post-merge
     ~/.config: .config/**
     ~/.bin: .bin/**
     ~/.vimrc: .vimrc
