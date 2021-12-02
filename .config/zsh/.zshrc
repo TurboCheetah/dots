@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Load zgen
-source "${HOME}/.dootfiles/zsh/zgen/zgen.zsh"
+source "${HOME}/.dotfiles/.config/zsh/zgen/zgen.zsh"
 ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local ${HOME}/.dotfiles/zsh/zshrc )
 # if the init script doesn't exist
 if ! zgen saved; then
