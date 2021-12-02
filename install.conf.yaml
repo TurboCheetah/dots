@@ -16,5 +16,6 @@
     ~/.config: .config/**
     ~/.bin: .bin/**
     ~/.vimrc: .vimrc
+    ~/.wallpapers: .wallpapers/**
     ~/.xinitrc: .xinitrc
     ~/.zshenv: zsh/zshenv
