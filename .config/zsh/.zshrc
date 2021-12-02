@@ -9,7 +9,7 @@ if ! zgen saved; then
 
   # specify plugins here
   zgen oh-my-zsh
-  zgen load denysdovhan/spaceship-zsh-theme spaceship
+  zgen load spaceship-prompt/spaceship-prompt spaceship
   zgen load zsh-users/zsh-completions
 
   plugins=(git zsh-autosuggestions zsh-syntax-highlighting common-aliases docker-compose extract gh sudo transfer screen)
@@ -23,10 +23,27 @@ fi
 
 
 DISABLE_UPDATE_PROMPT=true
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim
 unsetopt nomatch
+SPACESHIP_PROMPT_ORDER=(
+  time          # Time stamps section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  package       # Package version
+  node          # Node.js section
+  docker        # Docker section
+  exec_time     # Execution time
+  line_sep      # Line break
+  battery       # Battery level and status
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
 SPACESHIP_USER_SHOW=needed
 SPACESHIP_HOST_SHOW=false
 SPACESHIP_DIR_TRUNC_PREFIX="~/"
