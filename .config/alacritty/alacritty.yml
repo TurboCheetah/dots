@@ -39,12 +39,13 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: Input Mono
+    # family: Input Mono
+    family: Fira Code
     style: Regular
 
   # Bold font face
   bold:
-    family: Input Mono
+    family: Fira Code
     style: Bold
 
   # Italic font face
@@ -54,7 +55,7 @@ font:
 
   # Bold italic font face
   bold_italic:
-    family: Input Mono
+    family: Fira Code
     style: Bold Italic
 
   # Point size
