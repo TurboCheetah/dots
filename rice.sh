@@ -17,7 +17,7 @@ then
 fi
 
 # install dependencies
-paru -S --noconfirm xorg xorg-xinit btop exa fzf bspwm sxhkd picom-ibhagwan-git alacritty cava dunst htop neofetch neovim lf polybar rofi zsh python-pywal ttc-iosevka ttc-iosevka-curly otf-apple-sf-pro ttf-nerd-fonts-symbols nerd-fonts-fira-code nerd-fonts-complete playerctl maim
+paru -S --noconfirm xorg xorg-xinit btop exa fzf bspwm sxhkd picom-ibhagwan-git alacritty cava dunst htop neofetch neovim lf polybar rofi zsh feh python-pywal ttc-iosevka ttc-iosevka-curly otf-apple-sf-pro ttf-nerd-fonts-symbols nerd-fonts-fira-code nerd-fonts-complete playerctl maim bluez bluez-utils bluez-runit
 
 # install dots
 git clone https://github.com/TurboCheetah/dots.git ~/.dotfiles
