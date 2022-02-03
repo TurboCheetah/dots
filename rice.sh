@@ -2,7 +2,7 @@
 # Dotfiles install script, hosted on https://turbo.ooo/rice
 
 # install paru
-sudo pacman -S --needed base-devel
+sudo pacman -S --needed base-devel git
 if ! command -v paru &> /dev/null
 then
     echo "It seems that you don't have paru installed, I'll install that for you before continuing."
@@ -17,7 +17,7 @@ then
 fi
 
 # install dependencies
-paru -S --noconfirm exa fzf bspwm sxhkd picom-ibhagwan-git alacritty cava dunst htop neofetch neovim lf polybar rofi zsh python-pywal ttc-iosevka ttc-iosevka-curly otf-apple-sf-pro ttf-nerd-fonts-symbols nerd-fonts-fira-code playerctl zscroll-git
+paru -S --noconfirm xorg xorg-xinit btop exa fzf bspwm sxhkd picom-ibhagwan-git alacritty cava dunst htop neofetch neovim lf polybar rofi zsh python-pywal ttc-iosevka ttc-iosevka-curly otf-apple-sf-pro ttf-nerd-fonts-symbols nerd-fonts-fira-code nerd-fonts-complete playerctl maim
 
 # install dots
 git clone https://github.com/TurboCheetah/dots.git ~/.dotfiles
