@@ -1,14 +1,31 @@
 #!/bin/sh
 
 # Set some bsp specific stuff
-bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 &
+
+if [[ $(xrandr -q | grep 'HDMI-0 connected') ]]; then
+	bspc monitor HDMI-0 -d 1 2 3 4 5
+	bspc monitor DP-2 -d 6 7 8
+else
+	for monitor in $(xrandr -q | grep " connected" | cut -d" " -f1); do
+		bspc monitor $monitor -d 1 2 3 4 5 6 7 8
+	done
+fi
+
+# pywal
+if [ ! -f /tmp/startup.lock ]; then
+    wal -qst --saturate=1.0 -i $HOME/.wallpapers -o "$HOME/.config/wal/postrun.sh" &
+    pid=%%
+fi
+
+# colors
+wait $pid && source ~/.cache/wal/colors.sh
 
 # bspwm settings
-bspc config window_gap 4
-bspc config top_padding 20
-bspc config right_padding -4
-bspc config bottom_padding -4
-bspc config left_padding -4
+bspc config window_gap 0
+bspc config top_padding 24
+bspc config right_padding 0
+bspc config bottom_padding 0
+bspc config left_padding 0
 
 bspc config split_ratio 0.5
 bspc config borderless_monocle true
@@ -22,27 +39,30 @@ bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 bspc config pointer_action3 resize_corner
 
-bspc config border_width 0
-bspc config focused_border_color "#a3b8ef"
-bspc config normal_border_color  "#121212"
+bspc config border_width 2
+# bspc config focused_border_color "#a3b8ef"
+# bspc config normal_border_color  "#121212"
+bspc config normal_border_color $color0
+bspc config focused_border_color $color1
+bspc config active_border_color $color1
+bspc config urgent_border_color $color1
+bspc config presel_feedback_color $color1
 
 # some window rules
 bspc rule -a feh state=floating follow=on
 bspc rule -a mpv state=floating
-bspc rule -a Spotify desktop='^7'
-bspc rule -a discord desktop='^8'
-bspc rule -a "Signal Beta" desktop='^8'
-bspc rule -a "WhatsApp - Google Chrome" desktop='^8'
-bspc rule -a nextcloud desktop='^7' state=tiled
+bspc rule -a Spotify desktop='7'
+bspc rule -a discord desktop='8'
+bspc rule -a "Signal" desktop='8'
+bspc rule -a "WhatsApp - Google Chrome" desktop='8'
+bspc rule -a nextcloud desktop='7' state=tiled
 bspc rule -a KeePassXC state=floating
-bspc rule -a zoom state=floating
+# bspc rule -a zoom state=floating
 bspc rule -a "Tor Browser" state=floating
+
 
 # polybar
 ~/.config/polybar/launch.sh &
-
-# pywal
-wal -qst --saturate=1.0 -i $HOME/.wallpapers &
 
 # feh background
 # $HOME/.config/feh/.fehbg &

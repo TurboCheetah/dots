@@ -26,28 +26,15 @@ override-redirect = true
 font-0 = Iosevka Curly:size=9;3
 font-1 = SF Pro Rounded:size=9;3
 
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 1
+module-margin-right = 1
 
 [bar/middle]
 inherit = bar/main
-monitor = eDP-1
-;;width = 80%
-;;offset-x = 10%
+monitor = ${env:MONITOR}
 enable-ipc = true
 
-;; modules-right =  pulseaudio battery bluetooth vpn wifi
 modules-right =  spotify pulseaudio battery bluetooth wifi
-modules-center = time
-modules-left = bspwm
-
-[bar/middle-mon]
-inherit = bar/main
-monitor = HDMI-0
-width = 80%
-offset-x = 10%
-
-modules-right =  pulseaudio battery bluetooth vpn wifi
 modules-center = time
 modules-left = bspwm
 
@@ -82,13 +69,13 @@ label-empty-foreground = ${colors.black}
 
 [module/wifi]
 type = internal/network
-interface = wlp4s0
+interface = wlan0
 interval = 3.0
 tail = true
 
 format-connected = "<ramp-signal> <label-connected>"
 
-label-connected = %essid% | ▼ %downspeed:1:10%  ▲ %upspeed:1:10%
+label-connected = %essid% | ▼ %downspeed:1:10% ▲ %upspeed:1:10%
 label-connected-padding-right = 2
 ramp-signal-0 = 􀙇
 ramp-signal-foreground = ${colors.green}
@@ -151,7 +138,8 @@ ramp-volume-foreground = ${colors.yellow}
 type = internal/date
 interval = 1
 date = %a, %d %B
-time = %I:%M
+time = %H:%M
+time-alt = %a, %d %B | %H:%M
 format-prefix = 􀐬
 format-prefix-foreground = ${colors.accent}
 format = <label>

@@ -1,0 +1,8 @@
+* {{
+  fg:          #ffffff;
+  bg:          {background};
+  bg-alt:      #111111;
+  blue:        {color1};
+  bright:      {color9};
+  transparent: #00000000;
+}}

@@ -2,10 +2,8 @@
 
 killall -q polybar
 
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+while [ pgrep -u $UID -x polybar >/dev/null ]; do sleep 1; done
 
-polybar middle &
-
-if [[ $(xrandr -q | grep 'HDMI-0 connected') ]]; then
-	polybar middle-mon &
-fi
+for monitor in $(xrandr -q | grep " connected" | cut -d" " -f1); do
+    MONITOR="$monitor" polybar middle &
+done

@@ -40,12 +40,12 @@ font:
   # Normal (roman) font face
   normal:
     # family: Input Mono
-    family: Fira Code
+    family: FiraCode Nerd Font
     style: Regular
 
   # Bold font face
   bold:
-    family: Fira Code
+    family: FiraCode Nerd Font
     style: Bold
 
   # Italic font face
@@ -55,7 +55,7 @@ font:
 
   # Bold italic font face
   bold_italic:
-    family: Fira Code
+    family: FiraCode Nerd Font
     style: Bold Italic
 
   # Point size
@@ -78,34 +78,43 @@ use_thin_strokes: true
 
 draw_bold_text_with_bright_colors: false
 
+# Catppuccin!
 colors:
+  # Default colors
   primary:
-    background: '#050505'
-    foreground: '#EEEEEE'
+    background: '0x1E1D2F'
+    foreground: '0xD9E0EE'
 
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1E1D2F'
+    cursor: '0xF5E0DC'
+
+  # Normal colors
   normal:
-    black:   '#282a36'
-    red:     '#f37f97'
-    green:   '#5ae6b4'
-    yellow:  '#f7ca7a'
-    blue:    '#8297f4'
-    magenta: '#ea8bff'
-    cyan:    '#79e6f3'
-    white:   '#EEEEEE'
-    orange:  '0xc6a679' #Here for reference
+    black:   '0x6E6C7E'
+    red:     '0xF28FAD'
+    green:   '0xABE9B3'
+    yellow:  '0xFAE3B0'
+    blue:    '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan:    '0x89DCEB'
+    white:   '0xD9E0EE'
 
+  # Bright colors
   bright:
-    black:   '#282a36'
-    red:     '#f37f97'
-    green:   '#5ae6b4'
-    yellow:  '#f7ca7a'
-    blue:    '#8297f4'
-    magenta: '#ea8bff'
-    cyan:    '#79e6f3'
-    white:   '#EEEEEE'
-    orange:  '0xceb188' #Here for reference
+    black:   '0x988BA2'
+    red:     '0xF28FAD'
+    green:   '0xABE9B3'
+    yellow:  '0xFAE3B0'
+    blue:    '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan:    '0x89DCEB'
+    white:   '0xD9E0EE'
 
-background_opacity: 1.0
+  indexed_colors:
+    - { index: 16, color: '0xF8BD96' }
+    - { index: 17, color: '0xF5E0DC' }
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }

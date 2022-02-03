@@ -4,7 +4,8 @@ super + Return
 
 # program launcher
 super + space
-   /home/turbo/.config/rofi/bin/launcher_colorful
+#    /home/turbo/.config/rofi/bin/launcher_colorful
+    rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/config.rasi
 
 # Tab menu
 alt + Tab
@@ -49,6 +50,12 @@ super + shift + l
 # launch software
 super + {w,f,s,t,k,c,v}
     {brave, thunar, spotify, telegram-desktop, keepassxc, google-chrome-stable --profile-directory="Profile 1", code}
+# maim
+Print
+    maim --select --format png /dev/stdout | xclip -selection clipboard -t image/png -i; sleep 1; exec notify-send 'Screenshot has been copied to clipboard'
+
+super + Print
+    maim --format png /dev/stdout | xclip -selection clipboard -t image/png -i; sleep 1; exec notify-send 'Screenshot has been copied to clipboard'
 
 # close and kill
 super + {_,shift + }q
@@ -83,8 +90,8 @@ super + shift + {a,d}
     bspc desktop -f {prev,next}
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-    bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + }{1-9}
+    bspc {desktop -f,node -d} '{1-9}'
 
 # expand a window by moving one of its side outward
 super + ctrl + {h,j,k,l}
@@ -116,7 +123,7 @@ XF86AudioMute
 
 # brightness keys
 XF86MonBrightness{Up,Down}
-	brightnessctl set 25{+,-}
+	xbrightness {+,-}10000
 
 # next, previous, play-pause toggle
 XF86Audio{Next,Prev,Play}

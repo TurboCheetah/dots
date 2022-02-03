@@ -24,4 +24,5 @@
       glob: true
       path: .wallpapers/**
     ~/.xinitrc: .xinitrc
+    ~/.Xresources: .Xresources
     ~/.zshenv: .zshenv

@@ -84,4 +84,4 @@ community-update() {
 alias cplog="tail /opt/cloudplow/cloudplow.log -f"
 
 # Include Z
-. /opt/z/z.sh
+# . /opt/z/z.sh
