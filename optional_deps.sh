@@ -10,4 +10,4 @@ then
 fi
 
 # install dependencies
-paru -S --noconfirm brave-bin thunar visual-studio-code-bin spotify spicetify-cli powercord-electron-git keepassxc ntfs-3g
+paru -S --noconfirm brave-bin google-chrome thunar visual-studio-code-bin spotify spicetify-cli powercord-electron-git keepassxc ntfs-3g pydf ookla-speedtest-bin

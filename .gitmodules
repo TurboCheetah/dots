@@ -5,14 +5,15 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = https://github.com/NvChad/NvChad.git
-    ignore = dirty
+	ignore = dirty
 [submodule ".config/zsh/zgen"]
 	path = .config/zsh/zgen
 	url = https://github.com/tarjoilija/zgen.git
-    ignore = dirty
+	ignore = dirty
 [submodule ".config/mpv"]
 	path = .config/mpv
 	url = https://github.com/TurboCheetah/mpv.git
 [submodule ".config/btop/themes"]
 	path = .config/btop/themes
 	url = https://github.com/catppuccin/btop.git
+	ignore = dirty

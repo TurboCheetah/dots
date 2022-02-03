@@ -17,7 +17,7 @@ then
 fi
 
 # install dependencies
-paru -S --noconfirm artix-archlinux-support xorg xorg-xinit xclip btop exa fzf bspwm sxhkd picom-ibhagwan-git alacritty dunst htop neofetch neovim polybar rofi zsh feh python-pywal ttc-iosevka ttc-iosevka-curly otf-apple-sf-pro nerd-fonts-complete playerctl maim bluez bluez-utils bluez-runit
+paru -S --noconfirm artix-archlinux-support xorg xorg-xinit xclip btop exa fzf bspwm sxhkd picom-ibhagwan-git alacritty dunst htop neofetch neovim polybar rofi zsh feh python-pywal ttc-iosevka ttc-iosevka-curly nerd-fonts-complete playerctl maim bluez bluez-utils bluez-runit otf-apple-sf-pro
 
 # install dots
 git clone https://github.com/TurboCheetah/dots.git ~/.dotfiles
