@@ -32,7 +32,7 @@ export EDITOR=nvim
 unsetopt nomatch
 alias update="sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean"
 alias yay="paru"
-alias rcp="rsync -avh --progress $1 $2"
+alias rcp="rsync -rlptHhv --progress --safe-links --delete-delay --delay-updates $1 $2"
 alias pcp="rsync -avh --progress /mnt/local/raid/downloads/torrents/rutorrent/completed/Porn/* /mnt/unionfs/Media/Adult/ && find /mnt/unionfs/Media/Adult/ -name "RARBG*" -type f -delete"
 alias qpcp="rsync -avh --progress /mnt/local/raid/downloads/torrents/qbittorrent/completed/Porn/* /mnt/unionfs/Media/Adult/ && find /mnt/unionfs/Media/Adult/ -name "RARBG*" -type f -delete"
 alias nmon="speedometer -r enp3s0f1 -t enp3s0f1 -s"
