@@ -41,7 +41,7 @@ super + period
 
 # open whatsapp
 super + shift + w
-    google-chrome-stable --profile-directory="Profile 2" https://web.whatsapp.com
+    google-chrome-stable --profile-directory="Profile 1" https://web.whatsapp.com
 
 # launch lock screen
 super + shift + l
@@ -49,7 +49,7 @@ super + shift + l
 
 # launch software
 super + {w,f,s,t,k,c,v}
-    {brave, thunar, spotify, telegram-desktop, keepassxc, google-chrome-stable --profile-directory="Profile 1", code}
+    {brave, thunar, spotify, telegram-desktop, keepassxc, google-chrome-stable --profile-directory="Profile 2", code}
 # maim
 Print
     maim --select --format png /dev/stdout | xclip -selection clipboard -t image/png -i; sleep 1; exec notify-send 'Screenshot has been copied to clipboard'
