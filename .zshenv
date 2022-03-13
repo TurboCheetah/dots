@@ -4,7 +4,7 @@ export TERMINAL="alacritty"
 export BROWSER="brave"
 
 # path
-export PATH=$PATH:~/.local/bin/
+export PATH=$PATH:~/.local/bin:$HOME/.bin
 
 # fixing paths
 export ZDOTDIR="$HOME/.config/zsh"

@@ -123,7 +123,8 @@ XF86AudioMute
 
 # brightness keys
 XF86MonBrightness{Up,Down}
-	xbrightness {+,-}10000
+	/home/turbo/.bin/changebrightness.sh {up,down}
+	# xbrightness {+,-}10000
 
 # next, previous, play-pause toggle
 XF86Audio{Next,Prev,Play}
