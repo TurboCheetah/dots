@@ -71,7 +71,7 @@ bspc rule -a "Tor Browser" state=floating
 sxhkd &
 
 # picom
-picom --experimental-backends -b
+# picom --experimental-backends -b
 
 # dunst
 dunst > /dev/null 2>&1
