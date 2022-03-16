@@ -1,6 +1,6 @@
 # launch software
-super + {w,f,s,t,k,c,v}
-    {brave, thunar, spotify, telegram-desktop, keepassxc, google-chrome-stable --profile-directory="Profile 2", code}
+super + {w,s,c,v}
+    {brave, spotify, google-chrome-stable --profile-directory="Profile 2", code}
 
 # open Brave in incognito
 super + p
@@ -36,7 +36,6 @@ XF86AudioMute
 # brightness keys
 XF86MonBrightness{Up,Down}
 	/home/turbo/.bin/changebrightness.sh {up,down}
-	# xbrightness {+,-}10000
 
 # next, previous, play-pause toggle
 XF86Audio{Next,Prev,Play}
