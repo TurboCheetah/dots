@@ -22,8 +22,12 @@ super + shift + o
     redshift -t 6500:4500 -l  31.276433:30.009311  &
 
 # turn off redshift
-super + shift + k
+super + shift + p
     pkill redshift
+
+# keepass
+super + shift + k
+    kpmenu -m dmenu
 
 # increase/decrease volume by 5%
 XF86Audio{Raise,Lower}Volume
