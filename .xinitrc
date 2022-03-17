@@ -23,5 +23,8 @@ gentoo-pipewire-launcher &
 # set root pointer
 xsetroot -cursor_name left_ptr &
 
+# slstatus
+slstatus &
+
 # exec dwm
 exec dbus-launch --sh-syntax --exit-with-session ~/.bin/startdwm

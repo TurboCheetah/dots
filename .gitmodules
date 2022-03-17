@@ -22,3 +22,6 @@
 	path = .config/dwm
 	url = https://github.com/TurboCheetah/dwm.git
 	ignore = dirty
+[submodule ".config/slstatus"]
+	path = .config/slstatus
+	url = https://github.com/TurboCheetah/slstatus.git
