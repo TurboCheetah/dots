@@ -13,7 +13,12 @@
 [submodule ".config/mpv"]
 	path = .config/mpv
 	url = https://github.com/TurboCheetah/mpv.git
+	ignore = dirty
 [submodule ".config/btop/themes"]
 	path = .config/btop/themes
 	url = https://github.com/catppuccin/btop.git
+	ignore = dirty
+[submodule ".config/dwm"]
+	path = .config/dwm
+	url = https://github.com/TurboCheetah/dwm.git
 	ignore = dirty
