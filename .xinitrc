@@ -18,7 +18,7 @@ picom -b
 dunst > /dev/null 2>&1 &
 
 # pipewire
-pipewire &
+gentoo-pipewire-launcher &
 
 # set root pointer
 xsetroot -cursor_name left_ptr &
