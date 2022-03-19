@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:/usr/local/bin:$PATH
 
 # Load zgen
 source "${HOME}/.dotfiles/.config/zsh/zgen/zgen.zsh"
@@ -40,6 +40,7 @@ alias ctdl="cd /mnt/local/raid/downloads/torrents/qbittorrent/completed/$1"
 alias cndl="cd /mnt/local/downloads/nzbs/nzbget/completed/$1"
 alias dprune="docker system prune -af --volumes"
 alias ls="exa -G --icons"
+alias lf="lfub"
 # cloudbox aliases
 alias cpu="screen -dmS "cloudplow" cloudplow upload"
 cloudbox() {
@@ -85,3 +86,15 @@ alias cplog="tail /opt/cloudplow/cloudplow.log -f"
 
 # Include Z
 # . /opt/z/z.sh
+
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp" >/dev/null
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' 'lfcd\n'
