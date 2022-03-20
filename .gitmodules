@@ -21,3 +21,6 @@
 [submodule ".config/slstatus"]
 	path = .config/slstatus
 	url = https://github.com/TurboCheetah/slstatus.git
+[submodule ".config/mpv"]
+	path = .config/mpv
+	url = https://github.com/TurboCheetah/mpv.git
