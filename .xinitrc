@@ -12,7 +12,7 @@ feh --no-fehbg --bg-fill --randomize $HOME/.wallpapers/ &
 sxhkd &
 
 # picom
-picom -b
+# picom -b
 
 # dunst
 dunst > /dev/null 2>&1 &

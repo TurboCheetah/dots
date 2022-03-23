@@ -16,9 +16,9 @@
       path: .config/**
     ~/.config/zsh/.zshrc: .config/zsh/.zshrc
     ~/.config/zsh/.zprofile: .config/zsh/.zprofile
-    ~/.bin: 
+    ~/.local: 
       glob: true
-      path: .bin/**
+      path: .local/**
     ~/.vimrc: .vimrc
     ~/.wallpapers:
       glob: true
