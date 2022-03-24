@@ -163,7 +163,7 @@ label = " %time%"
 
 [module/bluetooth]
 type = custom/script
-exec = ~/.bin/rofi-bluetooth --status
+exec = ~/.local/bin/rofi-bluetooth --status
 interval = 1
 click-left = rofi-bluetooth
 format-prefix = 􀑛

@@ -27,4 +27,4 @@ xsetroot -cursor_name left_ptr &
 slstatus &
 
 # exec dwm
-exec dbus-launch --sh-syntax --exit-with-session ~/.bin/startdwm
+exec dbus-launch --sh-syntax --exit-with-session ~/.local/bin/startdwm
