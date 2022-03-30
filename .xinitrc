@@ -20,9 +20,6 @@ dunst > /dev/null 2>&1 &
 # pipewire
 gentoo-pipewire-launcher &
 
-# set root pointer
-xsetroot -cursor_name left_ptr &
-
 # slstatus
 slstatus &
 
