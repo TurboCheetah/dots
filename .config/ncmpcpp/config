@@ -19,35 +19,37 @@ visualizer_look       = ●●
 visualizer_color      = "5,256, 2"
 
 # appearance
-colors_enabled        = "yes"
-#playlist_display_mode = alternative
+colors_enabled        = yes
+playlist_display_mode = columns
 user_interface        = alternative
 #volume_color          = "white"
 
-# window
-#song_window_title_format = "music"
-#statusbar_visibility     = "no"
-#header_visibility        = "no"
-#titles_visibility        = "no"
+# window settings
+song_window_title_format = ncmpcpp | {%a - }{%t}|{%f}
 
 # progress bar
-#progressbar_look = "   "
-#progressbar_color = "black"
-#progressbar_elapsed_color = "yellow"
+progressbar_look = "─  "
+progressbar_color = "black"
+progressbar_elapsed_color = "yellow"
+connected_message_on_startup = no
 
 # song list
 song_status_format= "$7%t"
-#song_list_format = "$(008)%t$R  $(247)%a$R$5  %l$8"
-#song_columns_list_format = "(53)[white]{tr} (45)[blue]{a}"
-
-#song_library_format = {{%a - %t} (%b)}|{%f}
+song_list_format = "$(008)%t$R  $(247)%a$R$5  %l$8"
+song_columns_list_format = "(25)[white]{a} (35)[magenta]{t} (35)[white]{b} (9)[magenta]{l}"
+song_library_format = {{%a - %t} (%b)}|{%f}
 
 # colors
 main_window_color = "blue"
-current_item_prefix = "$6> "
+current_item_prefix = "$4> "
 current_item_suffix = "$8"
-
+now_playing_prefix = "$b$4> "
+now_playing_suffix = $/b
 current_item_inactive_column_prefix = red
 current_item_inactive_column_suffix = red
+alternative_header_second_line_format = {{$4%a$9}{ - $6%b$9}{ ($4%y$9)}}|{%D}
 
-#color1 = "white"
+color1 = "white"
+
+# cover art
+execute_on_song_change="~/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh"

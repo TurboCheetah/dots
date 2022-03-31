@@ -1,6 +1,6 @@
 # launch software
 super + {w,s,c,v}
-    {brave-bin, spotify, google-chrome-stable --profile-directory="Profile 3", code}
+    {brave-bin, alacritty -e ncmpcpp, google-chrome-stable --profile-directory="Profile 3", code}
 
 # open Brave in incognito
 super + p
