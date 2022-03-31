@@ -1,6 +1,10 @@
 # launch software
-super + {w,s,c,v}
-    {brave-bin, alacritty -e ncmpcpp, google-chrome-stable --profile-directory="Profile 3", code}
+super + {w,c,v}
+    {brave-bin, google-chrome-stable --profile-directory="Profile 3", code}
+
+# launch ncmpcpp
+super + s
+    alacritty --class ncmpcpp,ncmpcpp -e ncmpcpp
 
 # open Brave in incognito
 super + p
