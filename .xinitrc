@@ -6,7 +6,7 @@ fi
 xrandr --dpi 96
 
 # feh background
-feh --no-fehbg --bg-fill --randomize $HOME/.wallpapers/ &
+feh --no-fehbg --bg-fill $HOME/.wallpapers/14755.png &
 
 # sxhkd
 sxhkd &
