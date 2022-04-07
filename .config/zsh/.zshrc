@@ -23,9 +23,6 @@ if ! zgen saved; then
   zgen save
 fi
 
-# load kubectl completions
-source /usr/share/kubectl/completion.zsh
-
 eval "$(starship init zsh)"
 
 DISABLE_UPDATE_PROMPT=true
