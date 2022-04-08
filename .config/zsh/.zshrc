@@ -1,32 +1,33 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Load zgen
-source "${HOME}/.dotfiles/.config/zsh/zgen/zgen.zsh"
-ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local ${HOME}/.dotfiles/zsh/zshrc )
-# if the init script doesn't exist
-if ! zgen saved; then
-
-  # specify plugins here
-  zgen oh-my-zsh
-  zgen load zsh-users/zsh-completions
-  zgen load zsh-users/zsh-autosuggestions
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load joshskidmore/zsh-fzf-history-search
-
-  plugins=(git common-aliases docker-compose extract gh sudo transfer screen)
-  for p in ${(@s' ')plugins}; do
-  	zgen oh-my-zsh plugins/$p
-  done
-
-  # generate the init script from plugins above
-  zgen save
+# Load Antidote
+# clone antidote if necessary and generate a static plugin file
+zhome=${ZDOTDIR:-$HOME}
+if [[ ! $zhome/.zsh_plugins.zsh -nt $zhome/.zsh_plugins.txt ]]; then
+  [[ -e $zhome/.antidote ]] \
+    || git clone --depth=1 https://github.com/mattmc3/antidote.git $zhome/.antidote
+  [[ -e $zhome/.zsh_plugins.txt ]] || touch $zhome/.zsh_plugins.txt
+  (
+    source $zhome/.antidote/antidote.zsh
+    antidote bundle <$zhome/.zsh_plugins.txt >$zhome/.zsh_plugins.zsh
+  )
 fi
 
+# uncomment if you want your session to have commands like `antidote update`
+# autoload -Uz $zhome/.antidote/functions/antidote
+
+# source static plugins file
+source $zhome/.zsh_plugins.zsh
+unset zhome
+
+# start Starship prompt
 eval "$(starship init zsh)"
 
 DISABLE_UPDATE_PROMPT=true
-# source $ZSH/oh-my-zsh.sh
+
+# Fuzzy find
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export EDITOR=nvim
 unsetopt nomatch
@@ -79,13 +80,8 @@ community-update() {
   cd -;
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # cloudplow aliases
 alias cplog="tail /opt/cloudplow/cloudplow.log -f"
-
-# Include Z
-# . /opt/z/z.sh
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
