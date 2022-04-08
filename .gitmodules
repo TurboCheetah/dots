@@ -6,10 +6,6 @@
 	path = .config/nvim
 	url = https://github.com/NvChad/NvChad.git
 	ignore = dirty
-[submodule ".config/zsh/zgen"]
-	path = .config/zsh/zgen
-	url = https://github.com/tarjoilija/zgen.git
-	ignore = dirty
 [submodule ".config/btop/themes"]
 	path = .config/btop/themes
 	url = https://github.com/catppuccin/btop.git
