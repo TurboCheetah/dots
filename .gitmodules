@@ -6,10 +6,6 @@
 	path = .config/nvim
 	url = https://github.com/NvChad/NvChad.git
 	ignore = dirty
-[submodule ".config/btop/themes"]
-	path = .config/btop/themes
-	url = https://github.com/catppuccin/btop.git
-	ignore = dirty
 [submodule ".config/dwm"]
 	path = .config/dwm
 	url = https://github.com/TurboCheetah/dwm.git
