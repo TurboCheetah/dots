@@ -5,18 +5,14 @@
       force: true
 
 - clean: ['~']
-
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [~/.dotfiles/.config/zsh/setup.sh]
+  - [chsh -s $(which fish), Making fish the default shell. Please install fzf, fd and bat for full functionality]
 
 - link:
     ~/.config: 
       glob: true
       path: .config/**
-    ~/.config/zsh/.zshrc: .config/zsh/.zshrc
-    ~/.config/zsh/.zsh_plugins.txt: .config/zsh/.zsh_plugins.txt
-    ~/.config/zsh/.zprofile: .config/zsh/.zprofile
     ~/.local: 
       glob: true
       path: .local/**
