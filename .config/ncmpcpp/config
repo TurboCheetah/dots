@@ -49,6 +49,3 @@ current_item_inactive_column_suffix = red
 alternative_header_second_line_format = {{$4%a$9}{ - $6%b$9}{ ($4%y$9)}}|{%D}
 
 color1 = "white"
-
-# cover art
-execute_on_song_change="~/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh"
