@@ -12,3 +12,6 @@
 [submodule ".config/mpv"]
 	path = .config/mpv
 	url = https://github.com/TurboCheetah/mpv.git
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/CosmicNvim/CosmicNvim.git
