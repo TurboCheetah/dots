@@ -21,6 +21,9 @@ Print
 super + Print
     maim --format png /dev/stdout | xclip -selection clipboard -t image/png -i; sleep 1; exec notify-send 'Screenshot has been copied to clipboard'
 
+super + shift + Print
+    maim --format png -i $(xdotool getactivewindow) /dev/stdout | xclip -selection clipboard -t image/png -i; sleep 1; exec notify-send 'Screenshot has been copied to clipboard'
+
 # turn on redshift
 super + shift + o
     redshift -t 6500:4500 -l  31.276433:30.009311  &
