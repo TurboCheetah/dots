@@ -19,6 +19,13 @@ set EDITOR nvim
 
 set LC_ALL en_US.UTF-8
 
+# set colors
+set -g fish_color_error f28fad
+set -g fish_color_normal c9cbff
+set -g hydro_symbol_prompt '>'
+set -g hydro_color_pwd ddb6f2
+set -g hydro_color_duration fae3b0
+
 #lf
 # keybind
 bind \co 'lfcd; commandline -f repaint'
