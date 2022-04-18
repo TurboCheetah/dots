@@ -8,6 +8,8 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [chsh -s $(which fish), Making fish the default shell. Please install fzf, fd and bat for full functionality]
+  - [curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher, Installing fisher plugin manager]
+  - [fisher update, Installing fisher plugins]
 
 - link:
     ~/.config: 
