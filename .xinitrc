@@ -6,7 +6,7 @@ fi
 xrandr --dpi 96
 
 # feh background
-feh --no-fehbg --bg-fill $HOME/.wallpapers/14755.png &
+feh --no-fehbg --bg-fill $HOME/.wallpapers/wallhaven-v99jk8_1920x1080.png &
 
 # sxhkd
 sxhkd &
