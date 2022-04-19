@@ -26,6 +26,10 @@ set -g hydro_symbol_prompt '>'
 set -g hydro_color_pwd ddb6f2
 set -g hydro_color_duration fae3b0
 
+# cloudbox aliases
+alias cpu="screen -dmS "cloudplow" cloudplow upload"
+alias cplog="tail /opt/cloudplow/cloudplow.log -f"
+
 #lf
 # keybind
 bind \co 'lfcd; commandline -f repaint'

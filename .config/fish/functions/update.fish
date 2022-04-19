@@ -15,7 +15,3 @@ end
 function ls --wraps exa --description 'alias for exa to replace ls'
     exa -G --icons $argv
 end
-
-# cloudbox aliases
-alias cpu="screen -dmS "cloudplow" cloudplow upload"
-alias cplog="tail /opt/cloudplow/cloudplow.log -f"
