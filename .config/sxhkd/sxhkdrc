@@ -1,6 +1,6 @@
 # launch software
 super + {w,c,v}
-    {brave-bin, google-chrome-stable --profile-directory="Profile 3", code}
+    {brave-bin, google-chrome-stable --profile-directory="Profile 3", code, librewolf}
 
 # launch ncmpcpp
 super + s
@@ -13,6 +13,10 @@ super + p
 # open whatsapp
 super + shift + w
     google-chrome-stable --profile-directory="Profile 1" https://web.whatsapp.com
+
+# open librewolf
+super + shift + l
+    librewolf
 
 # maim
 Print
