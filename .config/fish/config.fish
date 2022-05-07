@@ -19,6 +19,9 @@ set EDITOR nvim
 
 set LC_ALL en_US.UTF-8
 
+# fix for GPG
+set -x GPG_TTY (tty)
+
 # set colors
 set -g fish_color_error f28fad
 set -g fish_color_normal c9cbff
