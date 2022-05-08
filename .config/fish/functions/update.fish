@@ -5,13 +5,3 @@ function update --wraps apt --description 'alias for apt update, upgrade, autore
     sudo apt autoremove
     sudo apt autoclean
 end
-
-# rsync alias
-function rcp --wraps rsync --description 'alias for rsync'
-    rsync -rlptHhv --progress --safe-links $argv
-end
-
-# ls alias
-function ls --wraps exa --description 'alias for exa to replace ls'
-    exa -G --icons $argv
-end
