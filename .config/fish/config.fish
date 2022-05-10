@@ -205,3 +205,5 @@ ex=:\
 *.pdf=:\
 *.nix=:\
 "
+set -gx PNPM_HOME "/home/turbo/.local/share/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH

@@ -4,7 +4,7 @@ super + {w,c,v}
 
 # launch ncmpcpp
 super + s
-    alacritty --class ncmpcpp,ncmpcpp -e ncmpcpp
+    st -c ncmpcpp -e ncmpcpp
 
 # open Brave in incognito
 super + p

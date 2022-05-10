@@ -39,7 +39,6 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    # family: Input Mono
     family: JetBrainsMono Nerd Font
     style: Regular
 
@@ -50,7 +49,7 @@ font:
 
   # Italic font face
   italic:
-    family: Input Mono
+    family: JetBrainsMono Nerd Font
     style: Italic
 
   # Bold italic font face
