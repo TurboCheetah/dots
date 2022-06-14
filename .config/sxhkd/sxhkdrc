@@ -1,14 +1,14 @@
 # launch software
 super + {w,c,v}
-    {brave-bin, google-chrome-stable --profile-directory="Profile 3", code}
+    {chromium, google-chrome-stable --profile-directory="Profile 3", code}
 
 # launch ncmpcpp
 super + s
     st -c ncmpcpp -e ncmpcpp
 
-# open Brave in incognito
+# open Chromium in incognito
 super + p
-    brave-bin --incognito
+    chromium --incognito
 
 # open whatsapp
 super + shift + w
