@@ -12,6 +12,7 @@ end
 set fish_greeting
 
 # set path
+fish_add_path /usr/libexec/icecc/bin
 fish_add_path $HOME/.local/bin
 
 # set editor
@@ -21,6 +22,9 @@ set LC_ALL en_US.UTF-8
 
 # fix for GPG
 set -x GPG_TTY (tty)
+
+# fix for Java
+set -x _JAVA_AWT_WM_NONREPARENTING 1
 
 # set colors
 set -g fish_color_error f28fad
@@ -207,3 +211,8 @@ ex=:\
 "
 set -gx PNPM_HOME "/home/turbo/.local/share/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
+
+# bun
+set -Ux BUN_INSTALL "/home/turbo/.bun"
+fish_add_path "/home/turbo/.bun/bin"
+
