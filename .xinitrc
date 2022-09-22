@@ -1,12 +1,12 @@
 xsetroot -cursor_name left_ptr &
 if [[ $(xrandr -q | grep 'HDMI-0 connected') ]]; then
-	xrandr --output HDMI-0 --primary --output DP-2 --left-of HDMI-0
+	xrandr --output HDMI-0 --primary --output DP-2 --right-of HDMI-0
 fi
 
 xrandr --dpi 96
 
 # feh background
-feh --no-fehbg --bg-fill $HOME/.wallpapers/2923524.jpg &
+feh --no-fehbg --bg-fill $HOME/.wallpapers/848404.jpg &
 
 # sxhkd
 sxhkd &
