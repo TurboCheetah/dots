@@ -6,13 +6,13 @@ super + {w,c,v}
 #super + s
 #    st -c ncmpcpp -e ncmpcpp
 
-# open Chromium in incognito
+# open Librewolf in incognito
 super + p
     librewolf --private-window
 
 # open whatsapp
 super + shift + w
-    chromium --profile-directory="Profile 2" https://web.whatsapp.com
+    google-chrome-stable --profile-directory="Profile 6" https://web.whatsapp.com
 
 # open Jira
 super + shift + j 
