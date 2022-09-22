@@ -1,18 +1,23 @@
 # launch software
 super + {w,c,v}
-    {chromium, google-chrome-stable --profile-directory="Profile 3", code}
+    {chromium --profile-directory="Default", google-chrome-stable --profile-directory="Profile 3", code}
 
 # launch ncmpcpp
-super + s
-    st -c ncmpcpp -e ncmpcpp
+#super + s
+#    st -c ncmpcpp -e ncmpcpp
 
 # open Chromium in incognito
 super + p
-    chromium --incognito
+    chromium --profile-directory="Default" --incognito
 
 # open whatsapp
 super + shift + w
-    google-chrome-stable --profile-directory="Profile 1" https://web.whatsapp.com
+    chromium --profile-directory="Profile 2" https://web.whatsapp.com
+
+# open Jira
+super + shift + j 
+    google-chrome-stable --profile-directory="Profile 6" https://fcaqsupport.atlassian.net/jira/servicedesk/projects/IT/queues/custom/39 
+
 
 # open librewolf
 super + shift + l
