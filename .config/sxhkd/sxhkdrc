@@ -45,6 +45,10 @@ super + shift + p
 super + shift + k
     kpmenu -m dmenu
 
+# bluetooth
+super + shift + b
+    dmenu-bluetooth
+
 # increase/decrease volume by 5%
 XF86Audio{Raise,Lower}Volume
    pactl set-sink-volume 0 {+5%,-5%}
