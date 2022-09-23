@@ -1,6 +1,6 @@
 # launch software
 super + {w,c,v}
-    {librewolf, google-chrome-stable --profile-directory="Profile 3", code}
+    {librewolf, google-chrome-stable --profile-directory="Profile 6", code}
 
 # launch ncmpcpp
 #super + s
