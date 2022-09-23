@@ -12,11 +12,11 @@ super + p
 
 # open whatsapp
 super + shift + w
-    google-chrome-stable --profile-directory="Profile 6" https://web.whatsapp.com
+    google-chrome-stable --new-window --profile-directory="Profile 6" https://web.whatsapp.com
 
 # open Jira
 super + shift + j 
-    google-chrome-stable --profile-directory="Profile 6" https://fcaqsupport.atlassian.net/jira/servicedesk/projects/IT/queues/custom/39 
+    google-chrome-stable --new-window --profile-directory="Profile 6" https://fcaqsupport.atlassian.net/jira/servicedesk/projects/IT/queues/custom/39 
 
 
 # open librewolf
