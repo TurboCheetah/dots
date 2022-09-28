@@ -4,6 +4,7 @@ if [[ $(xrandr -q | grep 'HDMI-0 connected') ]]; then
 fi
 
 xrandr --dpi 96
+xset r rate 220 40
 
 # feh background
 feh --no-fehbg --bg-fill $HOME/.wallpapers/848404.jpg &
