@@ -216,3 +216,4 @@ set -gx PATH "$PNPM_HOME" $PATH
 set -Ux BUN_INSTALL "/home/turbo/.bun"
 fish_add_path "/home/turbo/.bun/bin"
 
+fish_add_path /home/turbo/.spicetify
