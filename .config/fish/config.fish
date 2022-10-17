@@ -1,7 +1,3 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
 # autologin
 set -l tty (tty)
 if test "$tty" = "/dev/tty1"
@@ -40,7 +36,9 @@ set -Ux FZF_DEFAULT_OPTS "--color=bg+:#302D41,bg:#1E1E2E,spinner:#F8BD96,hl:#F28
 # zoxide
 zoxide init fish | source
 
+# generally useful aliases
 alias v="vim"
+alias c="cat"
 
 # cloudbox aliases
 alias cpu="screen -dmS "cloudplow" cloudplow upload"
