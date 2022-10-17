@@ -37,7 +37,7 @@ toggle_power() {
         show_menu
     else
         if rfkill list bluetooth | grep -F -q 'blocked: yes'; then
-            rfkill unblock bluetooth && sleep 3
+          doas rfkill unblock bluetooth && sleep 1
         fi
         bluetoothctl power on
         show_menu
