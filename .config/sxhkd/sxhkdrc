@@ -49,6 +49,10 @@ super + shift + k
 super + shift + b
     dmenu-bluetooth
 
+# wireguard
+super + shift + n
+    dmenu-wireguard
+
 # increase/decrease volume by 5%
 XF86Audio{Raise,Lower}Volume
    pactl set-sink-volume 0 {+5%,-5%}
