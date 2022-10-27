@@ -42,7 +42,6 @@ case $SELECTED in
     wg 2>&1 | grep interface | awk '{print $5}' | sed 's/://g' | \
         run_dmenu "Select to disconnect"| xargs -I {} $SUDO_COMMAND wg-quick down "{}"
     [[ -f "$IPTABLES_BACKUP" ]] && $SUDO_COMMAND iptables-save > $IPTABLES_BACKUP
-    main
     ;;
 esac
 }
