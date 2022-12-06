@@ -1,0 +1,54 @@
+#!/bin/bash
+
+typeset -A menu
+menu=()
+
+if [ ! $(rc-service nordvpn status | grep -c "started") -eq 1 ]; then
+  doas rc-service nordvpn start
+fi
+
+show_menu () {
+    # The general nordvpn menu that allows for connect/disconnect and submenu navigation
+    vermsg=$(nordvpn countries | grep 'new version')
+    if [ -z vermsg ]; then
+        countries=$(nordvpn countries | sed -e 's///g')
+    else
+        countries=$(nordvpn countries | tail -n +2 | sed -e 's///g')
+    fi
+
+    if nordvpn status | grep -q 'Disconnected'; then
+        for country in $countries; do
+            if [ ! -z "${country// }" ]; then
+                menu+=([$country]="nordvpn connect ${country%,}")
+            fi
+        done
+    else
+        menu+=(
+            [1 - Disconnect from NordVPN]="nordvpn disconnect"
+        )
+    fi
+}
+
+show_menu
+
+# Displays country if connected to one
+country=$(nordvpn status | grep "Country" | cut -c 10-)
+
+if [[ -z "$country" ]]; then
+    RTEXT="NordVPN (Disconnected)"
+else
+    RTEXT="NordVPN ($country)"
+fi
+
+
+# Section from rofigen by losoliveirasilva
+# URL: https://github.com/losoliveirasilva/rofigen
+
+# launcher=(rofi -dmenu -i -lines 10 -p "${RTEXT}" -width 30 -location 0 -bw 1) 
+launcher=(dmenu -nf '#cba6f7' -nb '#161320' -sf '#161320' -sb '#cba6f7' -l 10 -i -p "${RTEXT}")
+
+selection="$(printf '%s\n' "${!menu[@]}" | sort | "${launcher[@]}")"
+
+if [[ -n $selection ]]; then
+    exec ${menu[${selection}]}
+fi
