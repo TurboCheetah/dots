@@ -23,15 +23,21 @@ super + shift + j
 super + shift + l
     librewolf
 
+super + shift + i
+    librewolf -P two
+
+super + shift + x
+    librewolf -P three
+
 # maim
 Print
-    maim --select --format png /dev/stdout | xclip -selection clipboard -t image/png -i; sleep 1; exec notify-send 'Screenshot has been copied to clipboard'
+    maim --select --hidecursor --format png /dev/stdout | xclip -selection clipboard -t image/png -i; sleep 1; exec notify-send 'Screenshot has been copied to clipboard'
 
 super + Print
-    maim --format png /dev/stdout | xclip -selection clipboard -t image/png -i; sleep 1; exec notify-send 'Screenshot has been copied to clipboard'
+    maim --hidecursor --format png /dev/stdout | xclip -selection clipboard -t image/png -i; sleep 1; exec notify-send 'Screenshot has been copied to clipboard'
 
 super + shift + Print
-    maim --format png -i $(xdotool getactivewindow) /dev/stdout | xclip -selection clipboard -t image/png -i; sleep 1; exec notify-send 'Screenshot has been copied to clipboard'
+    maim --hidecursor --format png -i $(xdotool getactivewindow) /dev/stdout | xclip -selection clipboard -t image/png -i; sleep 1; exec notify-send 'Screenshot has been copied to clipboard'
 
 super + a
     xclip -o -selection clipboard -t image/png > /tmp/$(date --iso-8601=seconds) && ass /tmp/$(date --iso-8601=seconds) | xsel -b; exec notify-send 'Screenshot has been uploaded to Ass'
