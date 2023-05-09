@@ -37,7 +37,7 @@ set -Ux FZF_DEFAULT_OPTS "--color=bg+:#302D41,bg:#1E1E2E,spinner:#F8BD96,hl:#F28
 zoxide init fish | source
 
 # generally useful aliases
-alias v="vim"
+alias v="nvim"
 alias c="cat"
 
 # cloudbox aliases
@@ -219,3 +219,4 @@ set -Ux BUN_INSTALL "/home/turbo/.bun"
 fish_add_path "/home/turbo/.bun/bin"
 
 fish_add_path /home/turbo/.spicetify
+

@@ -24,5 +24,11 @@ gentoo-pipewire-launcher &
 # slstatus
 slstatus &
 
+# fix for Discord RPC when running in Flatpak
+ln -sf $XDG_RUNTIME_DIR/{app/com.discordapp.Discord,}/discord-ipc-0
+
+# remap capslock to ctrl
+setxkbmap -option ctrl:nocaps
+
 # exec dwm
 exec dbus-launch --sh-syntax --exit-with-session ~/.local/bin/startdwm

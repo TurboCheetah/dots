@@ -15,16 +15,11 @@
     ~/.config: 
       glob: true
       path: .config/**
-    ~/.config/zsh/.zshrc: .config/zsh/.zshrc
-    ~/.config/zsh/.zsh_plugins.txt: .config/zsh/.zsh_plugins.txt
-    ~/.config/zsh/.zprofile: .config/zsh/.zprofile
     ~/.local: 
       glob: true
       path: .local/**
-    ~/.vimrc: .vimrc
     ~/.wallpapers:
       glob: true
       path: .wallpapers/**
     ~/.xinitrc: .xinitrc
     ~/.Xresources: .Xresources
-    ~/.zshenv: .zshenv

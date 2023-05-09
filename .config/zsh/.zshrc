@@ -1,33 +1,85 @@
-# If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Load Antidote
-# clone antidote if necessary and generate a static plugin file
-zhome=${ZDOTDIR:-$HOME}
-if [[ ! $zhome/.zsh_plugins.zsh -nt $zhome/.zsh_plugins.txt ]]; then
-  [[ -e $zhome/.antidote ]] \
-    || git clone --depth=1 https://github.com/mattmc3/antidote.git $zhome/.antidote
-  [[ -e $zhome/.zsh_plugins.txt ]] || touch $zhome/.zsh_plugins.txt
-  (
-    source $zhome/.antidote/antidote.zsh
-    antidote bundle <$zhome/.zsh_plugins.txt >$zhome/.zsh_plugins.zsh
-  )
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
 fi
 
-# uncomment if you want your session to have commands like `antidote update`
-# autoload -Uz $zhome/.antidote/functions/antidote
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
 
-# source static plugins file
-source $zhome/.zsh_plugins.zsh
-unset zhome
+# Vim mode
+bindkey -v
 
-# start Starship prompt
-eval "$(starship init zsh)"
+# fzf
+# zi ice from"gh-r" as"program"
+# zi light junegunn/fzf
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Options to fzf command
+export FZF_COMPLETION_OPTS='--border --info=inline'
 
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
+# (EXPERIMENTAL) Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf "$@" --preview 'tree -C {} | head -200' ;;
+    export|unset) fzf "$@" --preview "eval 'echo \$'{}" ;;
+    ssh)          fzf "$@" --preview 'dig {}' ;;
+    *)            fzf "$@" ;;
+  esac
+}
+
+# load completions
+zinit wait lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions \
+    zdharma-continuum/history-search-multi-word \
+    zsh-users/zsh-history-substring-search \
+    unixorn/fzf-zsh-plugin
+
+# Generate completions from manpages
+zstyle ':completion:*'      menu yes select
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
+zstyle ':completion:*:man:*'      menu yes select
+
+# Load starship theme
+zinit ice as"command" from"gh-r" \
+  atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+  atpull"%atclone" src"init.zsh"
+zinit light starship/starship
+
+eval "$(zoxide init zsh)"
+
+# Disable ZSH update prompt
 DISABLE_UPDATE_PROMPT=true
-
-# Fuzzy find
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export EDITOR=nvim
 unsetopt nomatch
@@ -94,3 +146,4 @@ lfcd () {
     fi
 }
 bindkey -s '^o' 'lfcd\n'
+

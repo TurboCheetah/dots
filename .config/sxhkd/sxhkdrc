@@ -1,33 +1,20 @@
 # launch software
-super + {w,c,v}
-    {librewolf, google-chrome-stable --profile-directory="Profile 6", code}
+super + {w,c}
+    {firefox, brave-bin}
 
-# launch ncmpcpp
-#super + s
-#    st -c ncmpcpp -e ncmpcpp
-
-# open Librewolf in incognito
+# open firefox in incognito
 super + p
-    librewolf --private-window
+    firefox --private-window
 
 # open whatsapp
 super + shift + w
-    google-chrome-stable --new-window --profile-directory="Profile 6" https://web.whatsapp.com
-
-# open Jira
-super + shift + j 
-    google-chrome-stable --new-window --profile-directory="Profile 6" https://fcaqsupport.atlassian.net/jira/servicedesk/projects/IT/queues/custom/39 
-
-
-# open librewolf
-super + shift + l
-    librewolf
+    brave-bin --new-window https://web.whatsapp.com
 
 super + shift + i
-    librewolf -P two
+    firefox -P two
 
 super + shift + x
-    librewolf -P three
+    firefox -P anti-fingerprinting
 
 # maim
 Print
@@ -44,15 +31,11 @@ super + a
 
 # turn on redshift
 super + shift + o
-    redshift -t 6500:4500 -l  31.276433:30.009311  &
+    redshift -PO 4500 &
 
 # turn off redshift
 super + shift + p
-    pkill redshift
-
-# keepass
-super + shift + k
-    kpmenu -m dmenu
+    redshift -x
 
 # bluetooth
 super + shift + b
@@ -76,7 +59,7 @@ XF86AudioMute
 
 # brightness keys
 XF86MonBrightness{Up,Down}
-	/home/turbo/.local/bin/changebrightness.sh {up,down}
+	~/.local/bin/changebrightness.sh {up,down}
 
 # next, previous, play-pause toggle
 XF86Audio{Next,Prev,Play}

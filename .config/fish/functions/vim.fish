@@ -1,4 +1,4 @@
 # vim aliases
-function vim --wraps lvim --description 'alias for lvim'
-    lvim $argv
+function vim --wraps nvim --description 'alias for nvim'
+    nvim $argv
 end
