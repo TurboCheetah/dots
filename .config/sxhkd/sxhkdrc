@@ -1,10 +1,10 @@
 # launch software
 super + {w,c}
-    {firefox, brave-bin}
+    {brave-bin, brave-bin}
 
-# open firefox in incognito
+# open Brave in incognito
 super + p
-    firefox --private-window
+    brave-bin --incognito
 
 # open whatsapp
 super + shift + w
