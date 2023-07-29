@@ -4,18 +4,31 @@
       create: true
       force: true
 
-- clean: ['~']
+- clean: [ '~' ]
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [chsh -s $(which fish), Making fish the default shell. Please install fzf, fd and bat for full functionality]
-  - [curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher, Installing fisher plugin manager]
-  - [fisher update, Installing fisher plugins]
+    - [
+        git submodule update --init --recursive,
+        Installing submodules
+      ]
+    - [
+        chsh -s $(which zsh),
+        Setting zsh as the default shell. Please install fzf,
+        fd and bat for full functionality
+      ]
+    - [
+        zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1,
+        Installing Zap
+      ]
+    - [
+        curl -s https://ohmyposh.dev/install.sh | bash -s,
+        Install Oh-My-Posh for zsh prompt
+      ]
 
 - link:
-    ~/.config: 
+    ~/.config:
       glob: true
       path: .config/**
-    ~/.local: 
+    ~/.local:
       glob: true
       path: .local/**
     ~/.wallpapers:
@@ -23,3 +36,9 @@
       path: .wallpapers/**
     ~/.xinitrc: .xinitrc
     ~/.Xresources: .Xresources
+    ~/.zshrc:
+      force: true
+      path: .config/zsh/.zshrc
+    ~/.zprofile:
+      force: true
+      path: .config/zsh/.zprofile

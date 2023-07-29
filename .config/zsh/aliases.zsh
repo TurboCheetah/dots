@@ -1,0 +1,7 @@
+alias cat="bat -p"
+alias c="cat"
+alias ls="exa -G --icons"
+alias rcp="rsync -rlptHhv --progress --safe-links"
+alias update="sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean"
+alias vim="nvim"
+alias v="vim"

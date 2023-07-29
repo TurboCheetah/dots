@@ -1,0 +1,170 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "style": "plain",
+          "template": "\u256d\u2500[<#cba6f7>{{ .UserName }}</><#f9e2af>@</><#cba6f7>{{ .HostName }}</>]\u2500",
+          "type": "session"
+        },
+        {
+          "foreground": "#f9e2af",
+          "style": "plain",
+          "template": "<#cdd6f4>[</>{{ .Path }}<#cdd6f4>]</>",
+          "type": "path"
+        },
+        {
+          "foreground": "#fab387",
+          "style": "plain",
+          "template": "<#cdd6f4>\u2500(</>#<#cdd6f4>)</>",
+          "type": "root"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#a6e3a1",
+          "properties": {
+            "fetch_package_manager": true,
+            "npm_icon": " <#f38ba8>\ue5fa</> ",
+            "yarn_icon": " <#89b4fa>\ue6a7</>"
+          },
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}<#cdd6f4>)</>",
+          "type": "node"
+        },
+        {
+          "foreground": "#f9e2af",
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}<#cdd6f4>)</>",
+          "type": "python"
+        },
+        {
+          "foreground": "#f38ba8",
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#cdd6f4>)</>",
+          "type": "java"
+        },
+        {
+          "foreground": "#89b4fa",
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }}<#cdd6f4>)</>",
+          "type": "dotnet"
+        },
+        {
+          "foreground": "#74c7ec",
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#cdd6f4>)</>",
+          "type": "go"
+        },
+        {
+          "foreground": "#fab387",
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#cdd6f4>)</>",
+          "type": "rust"
+        },
+        {
+          "foreground": "#89b4fa",
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#cdd6f4>)</>",
+          "type": "dart"
+        },
+        {
+          "foreground": "#f38ba8",
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#cdd6f4>)</>",
+          "type": "angular"
+        },
+        {
+          "foreground": "#cdd6f4",
+          "style": "plain",
+          "template": "<#1e293b>(</>{{ if .Error }}{{ .Error }}{{ else }}Nx {{ .Full }}{{ end }}<#1e293b>)</>",
+          "type": "nx"
+        },
+        {
+          "foreground": "#a6e3a1",
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#cdd6f4>)</>",
+          "type": "julia"
+        },
+        {
+          "foreground": "#f38ba8",
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#cdd6f4>)</>",
+          "type": "ruby"
+        },
+        {
+          "foreground": "#89b4fa",
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#cdd6f4>)</>",
+          "type": "azfunc"
+        },
+        {
+          "foreground": "#fab387",
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{.Profile}}{{if .Region}}@{{.Region}}{{end}}<#cdd6f4>)</>",
+          "type": "aws"
+        },
+        {
+          "foreground": "#89b4fa",
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}<#cdd6f4>)</>",
+          "type": "kubectl"
+        },
+        {
+          "foreground": "#cdd6f4",
+          "properties": {
+            "linux": "<#cdd6f4>\ue27f</>",
+            "macos": "<#cdd6f4>\ue27f</>",
+            "windows": "<#cdd6f4>\ue27f</>"
+          },
+          "style": "plain",
+          "template": "<#cdd6f4>(</>{{ if .WSL }}WSL at {{ end }}{{.Icon}}<#cdd6f4>)</>",
+          "type": "os"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "style": "plain",
+          "template": "\u2570\u2500",
+          "type": "text"
+        },
+        {
+          "foreground": "#cdd6f4",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": "<#cdd6f4>[</>{{ .HEAD }}{{ if .Staging.Changed }}<#a6e3a1> \u25cf {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<#f9e2af> \u25cf {{ .Working.String }}</>{{ end }}<#cdd6f4>]-</>",
+          "type": "git"
+        },
+        {
+          "foreground": "#cdd6f4",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#f38ba8{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "$ ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 2
+}
