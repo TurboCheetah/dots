@@ -11,39 +11,34 @@
 
 SUDO_COMMAND="doas"
 
-main(){
 IPTABLES_BACKUP="/tmp/iptables.backup"
 OPTION1="Connect"
 OPTION2="Disconnect"
 
 OPTIONS="$OPTION1\n$OPTION2"
 
-
 original_args=("$@")
 
 # dmenu command to pipe into. Extra arguments to dmenu-bluetooth are passed through to dmenu. This
 # allows the user to set fonts, sizes, colours, etc.
 run_dmenu() {
-    dmenu -nf '#cba6f7' -nb '#161320' -sf '#161320' -sb '#cba6f7' "${original_args[@]}" -i -p "$1"
+	dmenu -nf '#cba6f7' -nb '#161320' -sf '#161320' -sb '#cba6f7' "${original_args[@]}" -i -p "$1"
 }
 
 SELECTED="$(echo -e "$OPTIONS" | run_dmenu "Wireguard VPN")"
 
 case $SELECTED in
-  $OPTION1)
-    # connect
-    [[ -f "$IPTABLES_BACKUP" ]] || $SUDO_COMMAND iptables-save > $IPTABLES_BACKUP
-    basename -s .conf $(ls /etc/wireguard) | run_dmenu "Select to connect" | \
-    xargs -I {} $SUDO_COMMAND wg-quick up "{}"
-    exit 0
+"$OPTION1")
+	# connect
+	[[ -f "$IPTABLES_BACKUP" ]] || $SUDO_COMMAND iptables-save >$IPTABLES_BACKUP
+	basename -s .conf "$(ls /etc/wireguard)" | run_dmenu "Select to connect" |
+		xargs -I {} "$SUDO_COMMAND" wg-quick up "{}"
+	exit 0
 	;;
-  $OPTION2)
-    # disconnect
-    wg 2>&1 | grep interface | awk '{print $5}' | sed 's/://g' | \
-        run_dmenu "Select to disconnect"| xargs -I {} $SUDO_COMMAND wg-quick down "{}"
-    [[ -f "$IPTABLES_BACKUP" ]] && $SUDO_COMMAND iptables-save > $IPTABLES_BACKUP
-    ;;
+"$OPTION2")
+	# disconnect
+	wg 2>&1 | grep interface | awk '{print $5}' | sed 's/://g' |
+		run_dmenu "Select to disconnect" | xargs -I {} $SUDO_COMMAND wg-quick down "{}"
+	[[ -f "$IPTABLES_BACKUP" ]] && $SUDO_COMMAND iptables-save >$IPTABLES_BACKUP
+	;;
 esac
-}
-
-main
