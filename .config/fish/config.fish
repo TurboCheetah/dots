@@ -211,8 +211,6 @@ ex=:\
 *.pdf=:\
 *.nix=:\
 "
-set -gx PNPM_HOME "/home/turbo/.local/share/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
 
 # bun
 set -Ux BUN_INSTALL "/home/turbo/.bun"
@@ -220,3 +218,14 @@ fish_add_path "/home/turbo/.bun/bin"
 
 fish_add_path /home/turbo/.spicetify
 
+
+# pnpm
+set -gx PNPM_HOME "/home/turbo/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
+
+
+set -gx DENO_INSTALL "/home/turbo/.deno"
+fish_add_path "$DENO_INSTALL/bin"
